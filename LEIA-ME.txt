@@ -1,0 +1,110 @@
+========================================================================
+  GPX ANALISADOR DE ROTAS - CATTER Engenharia
+  Identifica as vias (ruas/avenidas/rodovias) percorridas em videos GoPro
+  a partir do arquivo GPX. Versao 1.0
+========================================================================
+
+------------------------------------------------------------------------
+O QUE E PRECISO
+------------------------------------------------------------------------
+- Windows 10 ou 11, 64 bits.
+- NAO precisa instalar Python nem nada. Ja vem tudo pronto nesta pasta.
+- Internet SOMENTE na primeira vez que processar uma regiao nova
+  (para baixar as ruas do OpenStreetMap). Depois funciona offline.
+
+------------------------------------------------------------------------
+COMO INSTALAR
+------------------------------------------------------------------------
+1. Copie a pasta INTEIRA "GPX_Analisador_Rotas" para o computador
+   (por exemplo, na Area de Trabalho ou em Documentos).
+   IMPORTANTE: copie a pasta toda, nao apenas o arquivo .exe.
+
+2. NAO coloque em "C:\Arquivos de Programas" (Program Files) - escolha
+   uma pasta comum (Area de Trabalho, Documentos) para o programa poder
+   gravar os relatorios.
+
+------------------------------------------------------------------------
+COMO ABRIR
+------------------------------------------------------------------------
+- Dentro da pasta, de duplo clique em:  GPX_Analisador_Rotas.exe
+
+- Se o Windows mostrar um aviso azul "O Windows protegeu o seu PC":
+  clique em "Mais informacoes" e depois em "Executar assim mesmo".
+  (Isso acontece porque o programa nao tem assinatura digital paga;
+   e seguro - foi feito internamente pela CATTER.)
+
+- Se o antivirus reclamar, libere/permita o arquivo
+  GPX_Analisador_Rotas.exe (falso positivo comum em programas Python).
+
+------------------------------------------------------------------------
+COMO USAR (passo a passo)
+------------------------------------------------------------------------
+1. SELECIONAR ARQUIVOS (secao 1 da janela)
+   - "Selecionar arquivo(s)": escolhe um ou varios arquivos .gpx; ou
+   - "Selecionar pasta": pega todos os .gpx de uma pasta.
+   - Marque "Subpastas" para procurar tambem dentro das subpastas.
+
+2. SAIDA (secao 2)
+   - "Pasta de saida": onde os relatorios serao salvos.
+   - Deixe marcados "Excel" e "Mapa HTML" (o principal).
+   - Marque "Abrir pasta ao fim" para a pasta abrir sozinha ao terminar.
+
+3. PROCESSAR (lado direito)
+   - Clique em "Processar". Acompanhe as barras e o log.
+   - Para interromper com seguranca, clique em "Cancelar".
+
+4. RESULTADOS (na pasta de saida)
+   - Relatorio_Rotas_GPX_....xlsx
+       Aba "Ruas percorridas": a lista das vias NA ORDEM, com horario de
+       entrada/saida, distancia e a COR de confianca
+       (verde = Alta, amarelo = Media, laranja = Baixa).
+   - Mapa_<arquivo>.html
+       De duplo clique para abrir no navegador. Ative/desative camadas e
+       clique nas ruas para ver os detalhes.
+
+------------------------------------------------------------------------
+PRIMEIRA VEZ x PROXIMAS VEZES
+------------------------------------------------------------------------
+- Na PRIMEIRA vez que processar uma regiao, o programa baixa as ruas do
+  OpenStreetMap (precisa de internet; leva alguns segundos).
+- Essas ruas ficam guardadas na pasta "data" (cache). Os proximos videos
+  da MESMA regiao processam na hora, inclusive SEM internet.
+- Para rodar so com o cache (sem internet), marque
+  "Somente cache (offline)".
+
+------------------------------------------------------------------------
+VARIOS VIDEOS DE UMA VEZ (LOTE)
+------------------------------------------------------------------------
+- Coloque todos os .gpx numa pasta, use "Selecionar pasta" + "Subpastas"
+  e clique "Processar". Sai UM Excel consolidado com todos.
+- Se um arquivo der problema, o lote continua e o erro fica na aba
+  "Erros e alertas" do Excel.
+
+------------------------------------------------------------------------
+PASTAS QUE O PROGRAMA CRIA (ao lado do .exe)
+------------------------------------------------------------------------
+- data\cache_osm : ruas baixadas (cache reutilizavel)
+- data\banco     : banco de controle (SQLite)
+- data\logs      : registros de execucao (uteis se algo der errado)
+- output         : relatorios gerados (se nao escolher outra pasta)
+
+------------------------------------------------------------------------
+AJUSTES (opcional, para usuarios avancados)
+------------------------------------------------------------------------
+- O arquivo "config\configuracoes.json" (ao lado do .exe) permite mudar
+  padroes como a margem de download, o raio de busca de vias e a validade
+  do cache. Edite com cuidado; em caso de duvida, mantenha os padroes.
+
+------------------------------------------------------------------------
+PROBLEMAS COMUNS
+------------------------------------------------------------------------
+- "Nao gerou nada / status parcial": provavelmente estava sem internet e
+  a regiao ainda nao estava no cache. Conecte a internet e rode de novo.
+- "Nao consigo salvar": mova a pasta para a Area de Trabalho/Documentos
+  (evite Program Files).
+- Erros detalhados ficam em  data\logs\gpx_rotas.log
+
+========================================================================
+  (c) CATTER Engenharia - uso interno.
+  Ruas (c) colaboradores do OpenStreetMap (licenca ODbL).
+========================================================================

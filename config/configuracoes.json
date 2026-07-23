@@ -1,0 +1,76 @@
+{
+  "_descricao": "Configuracoes do GPX Analisador de Rotas. Distancias em metros, tempos em dias/segundos conforme indicado. Ajuste com cuidado e valide com o mapa HTML.",
+
+  "buffer_ruas_m": 300,
+  "espacamento_pontos_m": 10,
+  "tolerancia_douglas_peucker_m": 3,
+  "angulo_preservacao_curva_graus": 20,
+
+  "raio_candidatos_m": 30,
+  "distancia_maxima_aceitavel_m": 50,
+
+  "tile_tamanho_km": 5,
+  "cache_validade_dias": 90,
+
+  "permanencia_minima_trecho_m": 20,
+  "salto_velocidade_maxima_kmh": 200,
+
+  "gerar_diagnostico_pontos": false,
+  "modo_offline": false,
+  "atualizar_cache": false,
+
+  "limpeza": {
+    "distancia_duplicado_m": 0.5,
+    "parado_velocidade_kmh": 1.5,
+    "parado_janela_min_pontos": 5,
+    "hdop_maximo": 30.0
+  },
+
+  "matching": {
+    "sigma_gps_m": 12.0,
+    "beta_transicao_m": 12.0,
+    "peso_azimute": 1.0,
+    "sigma_azimute_graus": 45.0,
+    "max_candidatos_por_ponto": 8,
+    "fator_corte_rota": 3.0,
+    "corte_rota_minimo_m": 60.0,
+    "bonus_classe_via": {
+      "motorway": 0.6,
+      "trunk": 0.5,
+      "primary": 0.4,
+      "secondary": 0.3,
+      "tertiary": 0.2,
+      "residential": 0.1,
+      "unclassified": 0.0,
+      "service": -0.2,
+      "living_street": 0.0
+    }
+  },
+
+  "confianca": {
+    "dist_media_alta_m": 8.0,
+    "dist_media_media_m": 18.0,
+    "dist_max_alta_m": 20.0,
+    "dif_azimute_alta_graus": 25.0,
+    "dif_azimute_media_graus": 55.0,
+    "pontos_minimos_confiavel": 3,
+    "margem_candidato_alta": 1.5
+  },
+
+  "saidas": {
+    "gerar_excel": true,
+    "gerar_mapa_html": true,
+    "gerar_geopackage": false,
+    "gerar_json": true,
+    "abrir_pasta_ao_terminar": false
+  },
+
+  "osm": {
+    "network_type": "drive",
+    "overpass_timeout_s": 180,
+    "pausa_entre_downloads_s": 1.0,
+    "max_downloads_simultaneos": 1
+  },
+
+  "versao_programa": "1.0.0"
+}

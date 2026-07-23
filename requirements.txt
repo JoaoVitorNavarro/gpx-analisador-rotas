@@ -1,0 +1,19 @@
+# GPX Analisador de Rotas - dependencias
+# Testado com Python 3.14.6 (Windows 10 x64) em 2026-07.
+# Versoes pinadas com as quais o projeto foi validado.
+
+gpxpy==1.6.2
+pandas==3.0.5
+numpy==2.5.1
+shapely==2.1.2
+pyproj==3.7.2
+geopandas==1.1.4
+pyogrio==0.13.0
+osmnx==2.1.1
+networkx==3.6.1
+scipy==1.18.0
+rtree==1.4.1
+openpyxl==3.1.5
+folium==0.20.0
+requests==2.34.2
+customtkinter==6.0.0

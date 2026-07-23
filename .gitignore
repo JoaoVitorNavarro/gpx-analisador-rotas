@@ -1,0 +1,42 @@
+# ==== Ambientes virtuais ====
+.venv/
+venv/
+env/
+ENV/
+
+# ==== Cache / bytecode Python ====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==== Build e empacotamento (PyInstaller) ====
+build/
+dist/
+entrega/
+*.manifest
+*.spec.bak
+
+# ==== Dados gerados em tempo de execucao ====
+data/
+output/
+output_cli/
+saida/
+
+# ==== Logs ====
+*.log
+logs/
+
+# ==== Sistema operacional / editores ====
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# ==== Arquivos GPX de exemplo (nao versionar videos/telemetria reais) ====
+*.gpx

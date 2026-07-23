@@ -1,0 +1,12 @@
+# Normaliza fins de linha automaticamente (LF no repositorio)
+* text=auto
+
+# Arquivos binarios (nunca fazer diff/merge de texto)
+*.png  binary
+*.jpg  binary
+*.ico  binary
+*.xlsx binary
+*.gpkg binary
+*.graphml binary
+*.zip  binary
+*.exe  binary
